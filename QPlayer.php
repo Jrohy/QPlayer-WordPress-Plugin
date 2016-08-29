@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: QPlayer
-Plugin URI: https://github.com/Jrohy/QPlayer-Typecho-Plugin
+Plugin URI: https://github.com/Jrohy/QPlayer-WordPress-Plugin
 Version: 1.2
 Author: Jrohy
 Author URI: https://32mb.space
