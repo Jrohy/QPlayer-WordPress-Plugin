@@ -2,7 +2,7 @@
 /*
 Plugin Name: QPlayer
 Plugin URI: https://github.com/Jrohy/QPlayer-WordPress-Plugin
-Version: 1.2
+Version: 1.2.1
 Author: Jrohy
 Author URI: https://32mb.space
 Description:简洁美观非常Qの悬浮音乐播放器，支持网易云音乐解析
