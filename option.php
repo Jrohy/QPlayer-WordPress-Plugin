@@ -213,7 +213,7 @@ function QPlayer_page() {
             </div>
             <div>id输入
                 <input type="text" id="inputID" onclick="clickAnimation()" placeholder="多个id用英文,分隔开" name="neteaseID" value="<?php echo get_option('neteaseID') ?>">
-                <p class="tip" style="margin-bottom: 0;">请自行去网易云音乐网页版获取音乐id(<a href="https://32mb.space/archives/17.html" target="_blank">获取方法及解析原理</a>)。</p>
+                <p class="tip" style="margin-bottom: 0;">请自行去网易云音乐网页版获取音乐id(具体在每个音乐项目的网址最后会有个id)。</p>
             </div>
 			<input type="submit" name="addMusic" id="addMusic" value="添加到歌曲列表"  /><br><br>
 			<div><div class="title">歌曲列表</div>
