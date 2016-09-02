@@ -3,7 +3,17 @@
 function QPlayer_install(){
     add_option('autoPlay', false);
     add_option('rotate', false);
-    add_option('color', '');
+    add_option('css', '');
+    add_option('js', 
+'//改变列表的背景颜色(错开颜色)，开启请删除注释
+/*
+function bgChange(){
+	var lis= $(".lib");
+	for(var i=0; i<lis.length; i+=2)
+	lis[i].style.background = "rgba(246, 246, 246, 0.5)";
+}
+window.onload = bgChange;
+*/');
     add_option('musicType', 'song');
     add_option('neteaseID','');
     add_option('musicList', '
@@ -24,7 +34,8 @@ function QPlayer_install(){
 function QPlayer_uninstall(){
 	delete_option('autoPlay');
 	delete_option('rotate');
-	delete_option('color');
+	delete_option('css');
+	delete_option('js');
     delete_option('musicType');
     delete_option('neteaseID');
 	delete_option('musicList');
@@ -137,7 +148,8 @@ function QPlayer_page() {
     if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD']=='POST'){
         update_option('autoPlay',$_POST['autoPlay']=='false'?false:true);
         update_option('rotate',$_POST['rotate']=='false'?false:true);
-        update_option('color',$_POST['color'] ? $_POST['color'] : '');
+        update_option('css',$_POST['css'] ? stripcslashes($_POST['css']) : '');
+        update_option('js',$_POST['js'] ? stripcslashes($_POST['js']) : '');
         update_option('musicType',$_POST['musicType']);
         update_option('neteaseID',$_POST['neteaseID'] ? $_POST['neteaseID'] : '');
         update_option('musicList',$_POST['musicList'] ? stripcslashes($_POST['musicList']) : '');
@@ -200,9 +212,11 @@ function QPlayer_page() {
 			  <input type="radio" name="rotate" value="false" <?php if (get_option('rotate') == false) echo "checked";?>>否
   			  <input type="radio" name="rotate" value="true" <?php if (get_option('rotate')) echo "checked";?>>是
 			</div><br>
-			<div><div class="title">自定义主色调</div>
-			  <input type="text" name="color" value="<?php echo get_option('color'); ?>">
-  			  <p class="tip">默认为<span style="color: #1abc9c;">#1abc9c</span>, 你可以自定义任何你喜欢的颜色作为播放器主色调。自定义主色调必须使用 Hex Color, 即`#233333`或`#333`的格式。填写错误的格式可能不会生效。</p>
+			<div><div class="title">自定义CSS</div>
+			  <textarea rows="6" cols="100" name="css"><?php echo get_option('css') ?></textarea>
+			</div><br>
+			<div><div class="title">自定义JS</div>
+			  <textarea rows="6" cols="100" name="js"><?php echo get_option('js') ?></textarea>
 			</div><br>
             <div class="title">添加网易云音乐(需主机支持curl扩展)</div>
             <div>id类型

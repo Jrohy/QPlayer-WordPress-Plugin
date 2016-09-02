@@ -2,7 +2,7 @@
 /*
 Plugin Name: QPlayer
 Plugin URI: https://github.com/Jrohy/QPlayer-WordPress-Plugin
-Version: 1.2.1
+Version: 1.3
 Author: Jrohy
 Author URI: https://32mb.space
 Description:简洁美观非常Qの悬浮音乐播放器，支持网易云音乐解析
@@ -69,15 +69,8 @@ function footer(){
 		</div>
          ';
 
-    if(get_option('color') != '') {
-        echo '<style>
-        #pContent .ssBtn {
-            background-color:'.get_option('color').';
-        }
-        #playlist li.playing, #playlist li:hover{
-            border-left-color:'.get_option('color').';
-        }
-        </style>';
+    if (get_option('css') != '') {
+        echo '<style>'.get_option('css').'</style>' . "\n";
     }
     echo '<script src="'.QPlayer_URL. '/js/jquery.min.js"></script>';
     echo '
@@ -89,7 +82,9 @@ function footer(){
 	echo '<script  src="'.QPlayer_URL.'/js/jquery-ui.min.js"></script>' . "\n";
     echo '<script  src="'.QPlayer_URL.'/js/jquery.marquee.min.js"></script>' . "\n";
     echo '<script  src="'.QPlayer_URL.'/js/player.js"></script>' . "\n";
-    
+    if (get_option('js') != '') {
+        echo '<script>'.get_option('js').'</script>' . "\n";
+    }
 }
 
 ?>
