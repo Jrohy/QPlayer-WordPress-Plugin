@@ -5,15 +5,14 @@ function QPlayer_install(){
     add_option('rotate', false);
     add_option('css', '');
     add_option('js', 
-'//改变列表的背景颜色(错开颜色)，开启请删除注释
-/*
+'//改变列表的背景颜色(错开颜色)
 function bgChange(){
 	var lis= $(".lib");
 	for(var i=0; i<lis.length; i+=2)
 	lis[i].style.background = "rgba(246, 246, 246, 0.5)";
 }
 window.onload = bgChange;
-*/');
+');
     add_option('musicType', 'song');
     add_option('neteaseID','');
     add_option('musicList', '

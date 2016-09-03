@@ -2,7 +2,7 @@
 /*
 Plugin Name: QPlayer
 Plugin URI: https://github.com/Jrohy/QPlayer-WordPress-Plugin
-Version: 1.3
+Version: 1.3.1
 Author: Jrohy
 Author URI: https://32mb.space
 Description:简洁美观非常Qの悬浮音乐播放器，支持网易云音乐解析
@@ -41,7 +41,7 @@ function footer(){
 		<div id="QPlayer" style="z-index:2016">
 		<div id="pContent">
 			<div id="player">
-				<span class="cover"></span>
+				<span class="cover" title="点击开启随机播放"></span>
 				<div class="ctrl">
 					<div class="musicTag marquee">
 						<strong>Title</strong>
