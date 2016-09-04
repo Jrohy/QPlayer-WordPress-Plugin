@@ -68,7 +68,17 @@ function footer(){
 		<ol id="playlist"></ol>
 		</div>
          ';
-
+         
+    if(get_option('color') != '') {
+        echo '<style>
+        #pContent .ssBtn {
+            background-color:'.get_option('color').';
+        }
+        #playlist li.playing, #playlist li:hover{
+            border-left-color:'.get_option('color').';
+        }
+        </style>';
+    }
     if (get_option('css') != '') {
         echo '<style>'.get_option('css').'</style>' . "\n";
     }
