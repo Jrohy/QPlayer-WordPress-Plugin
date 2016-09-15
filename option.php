@@ -20,13 +20,13 @@ window.onload = bgChange;
 {
     title: "叫做你的那个人",
     artist: "Jessica",
-    cover: "https://obw915dkh.qnssl.com/cover/%E5%8F%AB%E5%81%9A%E4%BD%A0%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%BA.jpg",
+    cover: "https://oceunit3e.qnssl.com/%E5%8F%AB%E5%81%9A%E4%BD%A0%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%BA.jpg",
     mp3: "https://obw92zax9.qnssl.com/%E5%8F%AB%E5%81%9A%E4%BD%A0%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%BA.mp3",
 },
 {
     title: "如果",
     artist: "金泰妍",
-    cover: "https://obw915dkh.qnssl.com/cover/%E5%A6%82%E6%9E%9C.jpg",
+    cover: "https://oceunit3e.qnssl.com/%E5%A6%82%E6%9E%9C.jpg",
     mp3: "https://obw92zax9.qnssl.com/%E5%A6%82%E6%9E%9C.mp3",
 }');
 }
