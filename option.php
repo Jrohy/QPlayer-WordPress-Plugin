@@ -16,19 +16,20 @@ window.onload = bgChange;
 ');
     add_option('musicType', 'song');
     add_option('neteaseID','');
-    add_option('musicList', '
-{
-    title: "叫做你的那个人",
-    artist: "Jessica",
-    cover: "https://oceunit3e.qnssl.com/%E5%8F%AB%E5%81%9A%E4%BD%A0%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%BA.jpg",
-    mp3: "https://obw92zax9.qnssl.com/%E5%8F%AB%E5%81%9A%E4%BD%A0%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%BA.mp3",
+    add_option('musicList', 
+'{
+    title:"叫做你的那个人",
+    artist:"Jessica",
+    mp3:"http://p2.music.126.net/N5MyzQh73z5KRqhmQe_WPg==/5675679022587512.mp3",
+    cover:"http://p3.music.126.net/DkVjogF-Ga8_FX0Kf7p7Pw==/2328765627693725.jpg?param=106x106",
 },
 {
-    title: "如果",
-    artist: "金泰妍",
-    cover: "https://oceunit3e.qnssl.com/%E5%A6%82%E6%9E%9C.jpg",
-    mp3: "https://obw92zax9.qnssl.com/%E5%A6%82%E6%9E%9C.mp3",
-}');
+    title:"如果",
+    artist:"金泰妍",
+    mp3:"http://p2.music.126.net/_W3MHbGYREJYhooqUCFw0w==/7936274929553895.mp3",
+    cover:"http://p4.music.126.net/3-Xl4UGcpgl2I3YbbC3QFg==/2933497024962579.jpg?param=106x106",
+},
+');
 }
 
 function QPlayer_uninstall(){
