@@ -3,8 +3,8 @@ Contributors: Jrohy
 Donate link: https://32mb.space/usr/themes/Mirages/img/wx-tb.jpg
 Tags: player, music, netease
 Requires at least: 3.0.1
-Tested up to: 4.6
-Stable tag: 1.2.1
+Tested up to: 4.6.1
+Stable tag: 1.3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,34 @@ Language: Chinese
 
 
 == Changelog ==
+= 1.3.4.1 =
+* 网易云音乐单曲解析不再支持国外服务器(国外ip)，遂完善提示信息
+* 更换默认歌曲源
+
+= 1.3.4 =
+* 新增 歌曲快进快退功能
+* 完善 随机播放(可记住随机播放状态了)
+* 修正 随机播放按钮提示
+* 修正 开启随机播放后改变歌曲导致播放器无法使用
+
+= 1.3.3 =
+* 添加首次运行使用帮助
+* 更换更美观的通知样式
+* 修复 播放列表错位
+* 修复 ie和edge部分兼容问题
+* 修正 默认歌曲链接
+
+= 1.3.2 =
+* 升级jquery稳定版本
+* 删除少用的jquery-ui.js以精简代码
+
+= 1.3.1 =
+* 添加随机播放功能. 按钮位置嘛， 自己慢慢找下
+* 恢复自定义主色调功能
+
+= 1.3 =
+* 添加自定义CSS和JS功能
+
 = 1.2.1 =
 * 优化切换动画
 * 将所有Jquery动画改为CSS动画, 减少卡顿
@@ -54,3 +82,4 @@ Language: Chinese
 
 为了让播放不会暂停，建议配合PJAX来使用
 https://32mb.space/archives/7.html
+http://www.ihewro.com/archives/354/
