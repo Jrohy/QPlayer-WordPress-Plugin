@@ -1,8 +1,16 @@
 <?php 
 
+function QPlayer_add_jquery() {
+    if ( !is_admin()) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', QPlayer_URL.'/js/jquery.min.js','' ,'2.2.1', true);
+        wp_enqueue_script('jquery');  
+    }
+}
+
 function QPlayer_install(){
-    add_option('autoPlay', false);
-    add_option('rotate', false);
+    add_option('autoPlay', '0');
+    add_option('rotate', '0');
     add_option('color', '');
     add_option('css', '');
     add_option('js', 
@@ -148,20 +156,20 @@ function QPlayer_page() {
         wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
     } 
     if (isset($_POST['submit']) && $_SERVER['REQUEST_METHOD']=='POST'){
-        update_option('autoPlay',$_POST['autoPlay']=='false'?false:true);
-        update_option('rotate',$_POST['rotate']=='false'?false:true);
-        update_option('color',$_POST['color'] ? $_POST['color'] : '');
-        update_option('css',$_POST['css'] ? stripcslashes($_POST['css']) : '');
-        update_option('js',$_POST['js'] ? stripcslashes($_POST['js']) : '');
-        update_option('musicType',$_POST['musicType']);
-        update_option('neteaseID',$_POST['neteaseID'] ? $_POST['neteaseID'] : '');
-        update_option('musicList',$_POST['musicList'] ? stripcslashes($_POST['musicList']) : '');
+        update_option('autoPlay', sanitize_text_field($_POST['autoPlay']));
+        update_option('rotate', sanitize_text_field($_POST['rotate']));
+        update_option('color', sanitize_text_field($_POST['color']));
+        update_option('css', stripcslashes(sanitize_text_field($_POST['css'])));
+        update_option('js', stripcslashes(sanitize_text_field($_POST['js'])));
+        update_option('musicType', sanitize_text_field($_POST['musicType']));
+        update_option('neteaseID', sanitize_text_field($_POST['neteaseID']));
+        update_option('musicList',stripcslashes(sanitize_text_field($_POST['musicList'])));
         echo '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible"> 
 <p><strong>设置已保存。</strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">忽略此通知。</span></button></div>';
     } 
     if (isset($_POST['addMusic']) && $_SERVER['REQUEST_METHOD']=='POST') {
-    	update_option('musicType',$_POST['musicType']);
-        update_option('neteaseID',$_POST['neteaseID'] ? $_POST['neteaseID'] : '');
+    	update_option('musicType',sanitize_text_field($_POST['musicType']));
+        update_option('neteaseID',sanitize_text_field($_POST['neteaseID']));
     	$musicResult = parse(get_option('neteaseID'), get_option('musicType'));
     	$deal = get_option('musicList');
     	if ($deal != '' && substr(trim($deal), -1) != ','){
@@ -208,12 +216,12 @@ function QPlayer_page() {
       <h1>QPlayer设置</h1><br>
         <form method="post">  
 			<div><div class="title">自动播放</div>
-			  <input type="radio" name="autoPlay" value="false" <?php if (get_option('autoPlay') == false) echo "checked";?>>否
-  			  <input type="radio" name="autoPlay" value="true" <?php if (get_option('autoPlay')) echo "checked";?>>是
+			  <input type="radio" name="autoPlay" value="0" <?php if (!get_option('autoPlay')) echo "checked";?>>否
+  			  <input type="radio" name="autoPlay" value="1" <?php if (get_option('autoPlay')) echo "checked";?>>是
 			</div><br>
 			<div><div class="title">封面旋转</div>
-			  <input type="radio" name="rotate" value="false" <?php if (get_option('rotate') == false) echo "checked";?>>否
-  			  <input type="radio" name="rotate" value="true" <?php if (get_option('rotate')) echo "checked";?>>是
+			  <input type="radio" name="rotate" value="0" <?php if (!get_option('rotate')) echo "checked";?>>否
+  			  <input type="radio" name="rotate" value="1" <?php if (get_option('rotate')) echo "checked";?>>是
 			</div><br>
 			<div><div class="title">自定义主色调</div>
 			  <input type="text" name="color" value="<?php echo get_option('color'); ?>">
