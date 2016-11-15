@@ -4,7 +4,7 @@ Donate link: https://32mb.space/usr/themes/Mirages/img/wx-tb.jpg
 Tags: player, music, netease
 Requires at least: 3.0.1
 Tested up to: 4.6.1
-Stable tag: 1.3.4.1
+Stable tag: 1.3.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,10 @@ Language: Chinese
 
 
 == Changelog ==
+= 1.3.4.2 =
+* 修复歌曲链接为空时不会自动跳过的bug
+* 规范列表ul为数字表示
+
 = 1.3.4.1 =
 * 网易云音乐单曲解析不再支持国外服务器(国外ip)，遂完善提示信息
 * 更换默认歌曲源
