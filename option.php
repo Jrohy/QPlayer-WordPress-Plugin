@@ -238,11 +238,11 @@ function QPlayer_page() {
                 <input type="radio" name="musicType"  value="collect"  <?php if (get_option('musicType') == 'collect') echo "checked";?>>歌单
                 <input type="radio" name="musicType" value="album" <?php if (get_option('musicType') == 'album') echo "checked";?>>专辑
                 <input type="radio" name="musicType" value="artist" <?php if (get_option('musicType') == 'artist') echo "checked";?>>艺人
-                <input type="radio" name="musicType" value="song" <?php if (get_option('musicType') == 'song') echo "checked";?>>单曲(需国内服务器)
+                <input type="radio" name="musicType" value="song" <?php if (get_option('musicType') == 'song') echo "checked";?>>单曲
             </div>
             <div>id输入
                 <input type="text" id="inputID" onclick="clickAnimation()" placeholder="多个id用英文,分隔开" name="neteaseID" value="<?php echo get_option('neteaseID') ?>">
-                <p class="tip" style="margin-bottom: 0;">请自行去网易云音乐网页版获取音乐id(具体在每个音乐项目的网址最后会有个id)。单曲解析不支持国外的服务器(国外ip)! 有版权的音乐无法解析!</p>
+                <p class="tip" style="margin-bottom: 0;">请自行去网易云音乐网页版获取音乐id(具体在每个音乐项目的网址最后会有个id)。有版权的音乐无法解析!</p>
             </div>
 			<input type="submit" name="addMusic" id="addMusic" value="添加到歌曲列表"  /><br><br>
 			<div><div class="title">歌曲列表</div>
